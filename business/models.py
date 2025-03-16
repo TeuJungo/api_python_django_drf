@@ -4,7 +4,7 @@ from django.db import models
 
 class Business(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    social_midea = models.CharField(max_length=500)
+    social_name = models.CharField(max_length=500)
     nif = models.CharField(max_length=15)
     phone = models.CharField(max_length=15,default=True)
     is_active = models.CharField(max_length=20,default=True,null=False)
@@ -16,5 +16,5 @@ class Business(models.Model):
         verbose_name_plural = 'businesses'
         
     def __str__(self):
-        return self.social_midea
+        return self.social_name
     
